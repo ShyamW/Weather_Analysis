@@ -13,9 +13,6 @@ def getAllCoordinates():
     with open('lat_lng') as city_data_file:
         for city_data in city_data_file:
             city_data = city_data.split(',')
-            state = city_data[1]
-            city = city_data[2]
-            print city + ', ' + state
             lat = city_data[3]
             lng = city_data[4].strip('\n')
             lat_lng[lat] = lng
@@ -30,8 +27,9 @@ def getAllCoordinates():
 def getURL(lat, lng):
     config = ConfigParser.ConfigParser()
     config.read('CONFIG.ini')
-    url = (config.get('URL', 'Knoxville'))
-    url = str(url).replace('lat', str(lat)).replace('lng', str(lng))
+    url = (config.get('URL', 'forecast'))
+    url = str(url).replace('latitude', str(lat)).replace('longitude', str(lng))
+    print url
     return url
 
 
@@ -44,15 +42,16 @@ def getURL(lat, lng):
     longitude of weather forecast"""
 def getWeather(url, lat, lng):
     weather_data = HTML(urllib2.urlopen(url).read(), 'lxml')
-    # Navigate down HTML to the weather table (line 410 generally)
-    try:
-        weather_table = weather_data.body.contents[5].contents[5].contents[22].contents[5].contents[5].table
-        weather_forecast = Weather_Forecast(lat, lng)
-        weather_forecast.detWeatherProperties(weather_table)
+    location = weather_data.html.body.forecast['location']
+    time = weather_data.html.body.creationtime.string
+    weather = weather_data.html.body.contents[0].contents
+    for forecast in range(4, 30, 2):
+        print weather[forecast]
+        weather_forecast = Weather_Forecast(lat, lng, location, time)
+        weather_forecast.detWeatherProperties(weather[forecast])
         weather_forecast.outputWeatherProperties()
         print url
-    except:
-        print 'url down'
+    
 
 
 """Main Method"""
@@ -61,6 +60,9 @@ def main():
     for lat, lng in lat_lng.items():
         url = getURL(lat,lng)
         getWeather(url, lat, lng)
+        print '!' * 30
+
+
 
 
 if __name__ == '__main__':
