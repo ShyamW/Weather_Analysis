@@ -46,12 +46,11 @@ def getWeather(url, lat, lng):
     time = weather_data.html.body.creationtime.string
     weather = weather_data.html.body.contents[0].contents
     for forecast in range(4, 30, 2):
-        print weather[forecast]
         weather_forecast = Weather_Forecast(lat, lng, location, time)
         weather_forecast.detWeatherProperties(weather[forecast])
         weather_forecast.outputWeatherProperties()
         print url
-    
+
 
 
 """Main Method"""
