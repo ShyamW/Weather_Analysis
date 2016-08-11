@@ -44,12 +44,20 @@ def getWeather(url, lat, lng):
     weather_data = HTML(urllib2.urlopen(url).read(), 'lxml')
     location = weather_data.html.body.forecast['location']
     time = weather_data.html.body.creationtime.string
-    weather = weather_data.html.body.contents[0].contents
-    for forecast in range(4, 30, 2):
-        weather_forecast = Weather_Forecast(lat, lng, location, time)
-        weather_forecast.detWeatherProperties(weather[forecast])
-        weather_forecast.outputWeatherProperties()
-        print url
+    # weather = weather_data.html.body.contents[0].contents
+    # try:
+    #     for forecast in range(4, 30, 2):
+    #         weather_forecast = Weather_Forecast(lat, lng, location, time)
+    #         weather_forecast.detWeatherProperties(weather[forecast])
+    #         weather_forecast.outputWeatherProperties()
+    #         print url
+    # except:
+    #     print 'BROKE'
+    weather = weather_data.html.body.contents[0].contents[4]
+    weather_forecast = Weather_Forecast(lat, lng, location, time)
+    weather_forecast.detWeatherProperties(weather)
+    weather_forecast.outputWeatherProperties()
+    print url
 
 
 
@@ -58,7 +66,9 @@ def main():
     lat_lng = getAllCoordinates()
     for lat, lng in lat_lng.items():
         url = getURL(lat,lng)
-        getWeather(url, lat, lng)
+        try:
+            getWeather(url, lat, lng)
+        except: pass
         print '!' * 30
 
 
