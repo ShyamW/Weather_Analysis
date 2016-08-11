@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad92b411-574f-48bc-9626-535b0283e43f" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analyze_Weather.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Get_Weather_Data.py" afterPath="$PROJECT_DIR$/Get_Weather_Data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Weather_Forecast.py" afterPath="$PROJECT_DIR$/Weather_Forecast.py" />
+=======
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weather_out" afterPath="$PROJECT_DIR$/weather_out" />
+>>>>>>> c608eb0c99692e152161bfd268db94a40416404e
     </list>
     <ignored path="Weather_Analysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +33,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Weather_Forecast.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Weather_Forecast.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Weather_Forecast.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="396">
+              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+=======
             <state relative-caret-position="330">
               <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
               <folding />
             </state>
           </provider>
@@ -36,8 +51,13 @@
       <file leaf-file-name="Get_Weather_Data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Get_Weather_Data.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="395">
+              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+=======
             <state relative-caret-position="705">
               <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -45,21 +65,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lat_lng" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lat_lng">
+      <file leaf-file-name="weather_out" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weather_out">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="288">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+=======
             <state relative-caret-position="441390">
               <caret line="29426" column="36" selection-start-line="29426" selection-start-column="36" selection-end-line="29426" selection-end-column="36" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="weather_out" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weather_out">
+=======
+      <file leaf-file-name="lat_lng" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lat_lng">
+>>>>>>> c608eb0c99692e152161bfd268db94a40416404e
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="529866">
+              <caret line="29437" column="38" selection-start-line="29437" selection-start-column="38" selection-end-line="29437" selection-end-column="38" />
+=======
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
               <folding />
             </state>
           </provider>
@@ -112,10 +147,21 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="958" />
+=======
+<<<<<<< HEAD
+    <option name="x" value="1966" />
+    <option name="y" value="112" />
+    <option name="width" value="1496" />
+    <option name="height" value="938" />
+=======
+    <option name="x" value="514" />
+>>>>>>> c608eb0c99692e152161bfd268db94a40416404e
     <option name="y" value="30" />
     <option name="width" value="1406" />
     <option name="height" value="984" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -142,6 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -387,7 +434,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="958" y="30" width="1406" height="984" extended-state="0" />
+=======
+<<<<<<< HEAD
+    <frame x="1966" y="112" width="1496" height="938" extended-state="0" />
+=======
+    <frame x="514" y="30" width="1406" height="984" extended-state="0" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
+>>>>>>> c608eb0c99692e152161bfd268db94a40416404e
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13675214" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -427,16 +482,26 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Weather_Forecast.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
         <state relative-caret-position="330">
           <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Get_Weather_Data.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="558">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+=======
         <state relative-caret-position="705">
           <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -445,6 +510,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lat_lng">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="529866">
+          <caret line="29437" column="38" selection-start-line="29437" selection-start-column="38" selection-end-line="29437" selection-end-column="38" />
+=======
         <state relative-caret-position="441390">
           <caret line="29426" column="36" selection-start-line="29426" selection-start-column="36" selection-end-line="29426" selection-end-column="36" />
           <folding />
@@ -455,13 +524,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CONFIG.ini">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="18">
+=======
         <state relative-caret-position="15">
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
           <caret line="1" column="64" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
           <folding />
         </state>
@@ -645,6 +719,12 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/lat_lng">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529866">
+          <caret line="29437" column="38" selection-start-line="29437" selection-start-column="38" selection-end-line="29437" selection-end-column="38" />
+=======
     <entry file="file://$PROJECT_DIR$/Weather_Forecast.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -657,14 +737,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441390">
           <caret line="29426" column="36" selection-start-line="29426" selection-start-column="36" selection-end-line="29426" selection-end-column="36" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Get_Weather_Data.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="395">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+=======
         <state relative-caret-position="705">
           <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -673,8 +759,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weather_out">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="288">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Weather_Forecast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 6696707f80b3548d5ff711c5ac994f9d8f6a3049
           <folding />
         </state>
       </provider>
