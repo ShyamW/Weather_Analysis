@@ -10,7 +10,7 @@ from Weather_Forecast import Weather_Forecast
     Dictionary of lat: lng"""
 def getAllCoordinates():
     lat_lng = {}
-    with open('../Weather_Analysis/DATA/DATA_IN/lat_lng') as city_data_file:
+    with open('../DATA/DATA_IN/lat_lng') as city_data_file:
         for city_data in city_data_file:
             city_data = city_data.split(',')
             lat = city_data[3]
@@ -26,7 +26,7 @@ def getAllCoordinates():
     Longitude to replace into url"""
 def getURL(lat, lng):
     config = ConfigParser.ConfigParser()
-    config.read('../Weather_Analysis/CONFIG/CONFIG.ini')
+    config.read('../CONFIG/CONFIG.ini')
     url = (config.get('URL', 'forecast'))
     url = str(url).replace('latitude', str(lat)).replace('longitude', str(lng))
     print url
@@ -55,12 +55,16 @@ def getWeather(url, lat, lng):
 """Main Method"""
 def main():
     lat_lng = getAllCoordinates()
+    current = 0
+    total = len(lat_lng.keys())
     for lat, lng in lat_lng.items():
         url = getURL(lat,lng)
         try:
             getWeather(url, lat, lng)
         except: pass
-        print '!' * 30
+        current += 1
+        print str(current) + ' of ' + str(total)
+        print '!' * 20
 
 
 

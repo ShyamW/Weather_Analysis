@@ -13,6 +13,35 @@ with open('../Weather_Analysis/DATA/DATA_IN/STATES.txt') as f:
         states.append(state.strip('\n'))
 
 
+def formStateWeatherDict():
+    state_to_temp = dict()
+    with open('../Weather_Analysis/DATA/DATA_OUT/weather_out') as f:
+        for weather in f:
+            if '*' not in weather:
+                weather = weather.strip('\n').split(',')
+                temperature = int(weather[5].replace('Temperature: ','').replace(' ',''))
+                state = weather[8].split(' ')[-1]
+                print temperature
+                print state
+                if state in state_to_temp.keys():
+                    state_to_temp[state].append(temperature)
+                else:
+                    state_to_temp[state] = [temperature]
+    return state_to_temp
+
+
+def calculateAvgTemp(state_to_temp):
+    for state, temperatures in state_to_temp.items():
+        avg_temp = sum(temperatures) / float(len(temperatures))
+        state_to_temp[state] = avg_temp
+
+
+state_to_temp = formStateWeatherDict()
+calculateAvgTemp(state_to_temp)
+
+
+from time import sleep
+sleep(10)
 a = []
 for i in range(51):
     a.append(i)
@@ -20,8 +49,8 @@ data = [dict(
         type='choropleth',
         colorscale=scl,
         autocolorscale=False,
-        locations=states,
-        z=a,
+        locations=state_to_temp.keys(),
+        z=state_to_temp.values(),
         locationmode='USA-states',
         text='temperature is',
         marker=dict(

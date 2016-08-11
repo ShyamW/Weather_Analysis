@@ -33,7 +33,7 @@ class Weather_Forecast():
     @param self
         Weather Forecast Object"""
     def outputWeatherProperties(self):
-        out = open('weather_out', 'a')
+        out = open('../DATA/DATA_OUT/weather_out', 'a')
         out.write('Latitude: ' + self.LAT)
         out.write(', Longitude: ' + self.LNG)
         out.write(', Day: ' + self.day)
