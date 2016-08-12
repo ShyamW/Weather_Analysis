@@ -17,16 +17,18 @@ def formStateWeatherDict():
     state_to_temp = dict()
     with open('../Weather_Analysis/DATA/DATA_OUT/weather_out') as f:
         for weather in f:
-            if '*' not in weather:
-                weather = weather.strip('\n').split(',')
-                temperature = int(weather[5].replace('Temperature: ','').replace(' ',''))
-                state = weather[8].split(' ')[-1]
-                print temperature
-                print state
-                if state in state_to_temp.keys():
-                    state_to_temp[state].append(temperature)
-                else:
-                    state_to_temp[state] = [temperature]
+            try:
+                if '*' not in weather:
+                    weather = weather.strip('\n').split(',')
+                    temperature = int(weather[5].replace('Temperature: ','').replace(' ',''))
+                    state = weather[8].split(' ')[-1]
+                    print temperature
+                    print state
+                    if state in state_to_temp.keys():
+                        state_to_temp[state].append(temperature)
+                    else:
+                        state_to_temp[state] = [temperature]
+            except: pass
     return state_to_temp
 
 
