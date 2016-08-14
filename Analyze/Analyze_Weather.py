@@ -7,26 +7,24 @@ py.sign_in('gingerbread123', '5wi0st6l25')
 scl = [[0.0, 'rgb(242,240,247)'], [0.2, 'rgb(218,218,235)'], [0.4, 'rgb(188,189,220)'],  [0.6, 'rgb(158,154,200)'],
        [0.8, 'rgb(117,107,177)'], [1.0, 'rgb(84,39,143)']]
 
-states = []
-with open('../Weather_Analysis/DATA/DATA_IN/STATES.txt') as f:
-    for state in f:
-        states.append(state.strip('\n'))
 
 
 def formStateWeatherDict():
     state_to_temp = dict()
-    with open('../Weather_Analysis/DATA/DATA_OUT/weather_out') as f:
+    with open('../DATA/DATA_OUT/weather_out') as f:
         for weather in f:
-            if '*' not in weather:
-                weather = weather.strip('\n').split(',')
-                temperature = int(weather[5].replace('Temperature: ','').replace(' ',''))
-                state = weather[8].split(' ')[-1]
-                print temperature
-                print state
-                if state in state_to_temp.keys():
-                    state_to_temp[state].append(temperature)
-                else:
-                    state_to_temp[state] = [temperature]
+            try:
+                if '*' not in weather:
+                    weather = weather.strip('\n').split(',')
+                    temperature = int(weather[5].replace('Temperature: ','').replace(' ',''))
+                    state = weather[8].split(' ')[-1]
+                    print temperature
+                    print state
+                    if state in state_to_temp.keys():
+                        state_to_temp[state].append(temperature)
+                    else:
+                        state_to_temp[state] = [temperature]
+            except: pass
     return state_to_temp
 
 
