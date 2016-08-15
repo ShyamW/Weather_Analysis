@@ -74,4 +74,4 @@ layout = dict(
 
 fig = dict(data=data, layout=layout)
 
-url = py.plot(fig, filename='d3-cloropleth-map')
+url = py.plot(fig, filename='US Temperatures')
