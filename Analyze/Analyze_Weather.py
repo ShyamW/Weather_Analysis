@@ -38,11 +38,6 @@ state_to_temp = formStateWeatherDict()
 calculateAvgTemp(state_to_temp)
 
 
-from time import sleep
-sleep(10)
-a = []
-for i in range(51):
-    a.append(i)
 data = [dict(
         type='choropleth',
         colorscale=scl,
