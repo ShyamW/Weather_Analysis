@@ -1,3 +1,6 @@
+"""This class is used to standardize the way weather data is recorded.
+@author Shyam Thiagarajan"""
+
 class Weather_Forecast():
     def __init__(self, lat, lng, location, time):
         self.temperature = 0
@@ -25,8 +28,8 @@ class Weather_Forecast():
         self.temperature = weather_table.temp.string
         try:
             self.precipitation_chance = weather_table.pop.string
-        except:
-            print 'default'
+        except Exception:
+            print 'Exception'
 
 
     """Writes Weather Properties to text file
@@ -42,4 +45,4 @@ class Weather_Forecast():
         out.write(', Forecast' + self.forecast)
         out.write(', Chance of Precipitation: ' + str(self.precipitation_chance))
         out.write(', Location: ' + self.location + '\n')
-        out.write('*' * 50 + '\n')
+
