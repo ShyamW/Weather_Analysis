@@ -13,7 +13,7 @@ class Choropleth():
 
     """Sets the color scale for the choropleth map"""
     def setScale(self):
-        self.scl = [[0.0, 'rgb(242,240,247)'], [0.2, 'rgb(218,218,235)'], [0.4, 'rgb(188,189,220)'],
+        self.scl = [[0.01, 'rgb(242,240,247)'], [0.2, 'rgb(218,218,235)'], [0.4, 'rgb(188,189,220)'],
                     [0.6, 'rgb(158,154,200)'], [0.8, 'rgb(117,107,177)'], [1.0, 'rgb(84,39,143)']]
 
 
@@ -98,5 +98,5 @@ class Choropleth():
         self.showPlot()
 
 
-Choropleth = Choropleth()
-Choropleth.plotFigure()
+choropleth = Choropleth()
+choropleth.plotFigure()

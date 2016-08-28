@@ -1,3 +1,6 @@
+"""Class Used to Represent parsed Weather in a standardized way.
+@author
+    Shyam Thiagarajan"""
 class Weather_Forecast():
     def __init__(self, lat, lng, location, time):
         self.temperature = 0
@@ -8,7 +11,6 @@ class Weather_Forecast():
         self.LNG = lng
         self.day = 'Sunday'
         self.time = time
-
 
     """Determines Weather Properties from XML table.
     @param self
@@ -27,7 +29,6 @@ class Weather_Forecast():
             self.precipitation_chance = weather_table.pop.string
         except:
             print 'default'
-
 
     """Writes Weather Properties to text file
     @param self
