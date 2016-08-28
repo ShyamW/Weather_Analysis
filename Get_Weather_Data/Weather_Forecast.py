@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 """Class Used to Represent parsed Weather in a standardized way.
 @author
     Shyam Thiagarajan"""
-=======
-"""This class is used to standardize the way weather data is recorded.
-@author Shyam Thiagarajan"""
 
->>>>>>> 16fda4c01bcd199183dcccf0e06939414a00b914
 class Weather_Forecast():
     def __init__(self, lat, lng, location, time):
         self.temperature = 0

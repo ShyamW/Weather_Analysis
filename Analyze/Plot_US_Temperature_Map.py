@@ -10,22 +10,14 @@ class State_Choropleth():
         self.data = dict()
         self.layout = dict()
 
-
     """Sets the color scale for the Choropleth map"""
     def setScale(self):
-<<<<<<< HEAD:Analyze/Plot_US_Temperature_Map.py
         self.scl = [[0.01, 'rgb(242,240,247)'], [0.2, 'rgb(218,218,235)'], [0.4, 'rgb(188,189,220)'],
                     [0.6, 'rgb(158,154,200)'], [0.8, 'rgb(117,107,177)'], [1.0, 'rgb(84,39,143)']]
-=======
-        self.scl = [[0.0, 'rgb(51,0,51)'], [0.2, 'rgb(90,32,250)'], [0.4, 'rgb(51,255,60)'],
-                    [0.6, 'rgb(225,225,112)'], [0.8, 'rgb(255,128,10)'], [1.0, 'rgb(255,0,10)']]
->>>>>>> 16fda4c01bcd199183dcccf0e06939414a00b914:Analyze/US_State_Choropleth.py
-
 
     """Signs in to Plotly"""
     def signIn(self):
         py.sign_in('gingerbread123', '5wi0st6l25')
-
 
     """Forms a dictionary of {state: [temperatures]} by reading weather dat from weather_out.
     @updates self.state_to_temp
@@ -46,14 +38,12 @@ class State_Choropleth():
                 except:
                     pass
 
-
     """Updates the list og temperatures with the average of all temperatures recorded in the state
     @updates state_to_temp"""
     def AverageTemps(self):
         for state, temperatures in self.state_to_temp.items():
             avg_temp = sum(temperatures) / float(len(temperatures))
             self.state_to_temp[state] = avg_temp
-
 
     """Builds the Configuration JSON for the Choropleth Plot.
     @replaces self.data"""
@@ -86,13 +76,11 @@ class State_Choropleth():
             )
         )
 
-
     """Plots the state temperature map on plotly's website."""
     def showPlot(self):
         fig = dict(data=self.data, layout=self.layout)
         url = py.plot(fig, filename='US Temperatures')
         print url
-
 
     """Performs all tasks needed to produce a choropleth."""
     def plotFigure(self):
@@ -102,10 +90,8 @@ class State_Choropleth():
         self.AverageTemps()
         self.FormPlotJSON()
         self.showPlot()
-<<<<<<< HEAD:Analyze/Plot_US_Temperature_Map.py
 
+if __name__ == '__main__':
+    choropleth = State_Choropleth()
+    choropleth.plotFigure()
 
-choropleth = Choropleth()
-choropleth.plotFigure()
-=======
->>>>>>> 16fda4c01bcd199183dcccf0e06939414a00b914:Analyze/US_State_Choropleth.py
