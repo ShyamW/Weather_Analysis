@@ -3,7 +3,7 @@ import plotly.plotly as py
 """This class Takes National Weather Data gathered from Weather.gov and outputs a US state choropleth of average
 state temperatures."""
 
-class Choropleth():
+class State_Choropleth():
     def __init__(self):
         self.scale = [[]]
         self.state_to_temp = dict()
@@ -11,10 +11,15 @@ class Choropleth():
         self.layout = dict()
 
 
-    """Sets the color scale for the choropleth map"""
+    """Sets the color scale for the Choropleth map"""
     def setScale(self):
+<<<<<<< HEAD:Analyze/Plot_US_Temperature_Map.py
         self.scl = [[0.01, 'rgb(242,240,247)'], [0.2, 'rgb(218,218,235)'], [0.4, 'rgb(188,189,220)'],
                     [0.6, 'rgb(158,154,200)'], [0.8, 'rgb(117,107,177)'], [1.0, 'rgb(84,39,143)']]
+=======
+        self.scl = [[0.0, 'rgb(51,0,51)'], [0.2, 'rgb(90,32,250)'], [0.4, 'rgb(51,255,60)'],
+                    [0.6, 'rgb(225,225,112)'], [0.8, 'rgb(255,128,10)'], [1.0, 'rgb(255,0,10)']]
+>>>>>>> 16fda4c01bcd199183dcccf0e06939414a00b914:Analyze/US_State_Choropleth.py
 
 
     """Signs in to Plotly"""
@@ -33,17 +38,18 @@ class Choropleth():
                         weather = weather.strip('\n').split(',')
                         temperature = int(weather[5].replace('Temperature: ', '').replace(' ', ''))
                         state = weather[8].split(' ')[-1]
+                        print state
                         if state in self.state_to_temp.keys():
-                            self.state_to_temp[state].append(temperature)
+                            self.state_to_temp[state].add(temperature)
                         else:
-                            self.state_to_temp[state] = [temperature]
+                            self.state_to_temp[state] = {temperature}
                 except:
                     pass
 
 
-    """Updates the value temperature with the average of all temperatures recorded in the state
+    """Updates the list og temperatures with the average of all temperatures recorded in the state
     @updates state_to_temp"""
-    def calculateAvgTemp(self):
+    def AverageTemps(self):
         for state, temperatures in self.state_to_temp.items():
             avg_temp = sum(temperatures) / float(len(temperatures))
             self.state_to_temp[state] = avg_temp
@@ -93,10 +99,13 @@ class Choropleth():
         self.signIn()
         self.setScale()
         self.formStateWeatherDict()
-        self.calculateAvgTemp()
+        self.AverageTemps()
         self.FormPlotJSON()
         self.showPlot()
+<<<<<<< HEAD:Analyze/Plot_US_Temperature_Map.py
 
 
 choropleth = Choropleth()
 choropleth.plotFigure()
+=======
+>>>>>>> 16fda4c01bcd199183dcccf0e06939414a00b914:Analyze/US_State_Choropleth.py
