@@ -2,7 +2,7 @@
 @author
     Shyam Thiagarajan"""
 
-class Weather_Forecast():
+class Weather_Forecast(object):
     def __init__(self, lat, lng, location, time):
         self.temperature = 0
         self.forecast = 'NO WEATHER'
@@ -29,7 +29,7 @@ class Weather_Forecast():
         try:
             self.precipitation_chance = weather_table.pop.string
         except Exception:
-            print 'Exception'
+            print('Exception')
 
     """Writes Weather Properties to text file
     @param self
@@ -44,5 +44,4 @@ class Weather_Forecast():
         out.write(', Forecast' + self.forecast)
         out.write(', Chance of Precipitation: ' + str(self.precipitation_chance))
         out.write(', Location: ' + self.location + '\n')
-        print 'printed'
-
+        print('printed')

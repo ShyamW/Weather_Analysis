@@ -1,13 +1,13 @@
 import ConfigParser
-from bs4 import BeautifulSoup as HTML
-import urllib2
+import requests
 from Weather_Forecast import Weather_Forecast
+from bs4 import BeautifulSoup as HTML
 
 """Class used to parse and record national weather data"""
-class NationalWeather():
+class NationalWeather(object):
     def __init__(self):
         self.lat_lng = []
-        print 'Fetching'
+        print('Fetching')
 
     """Gets all Coordinates to determine weather for
     @return lat_lng
@@ -31,7 +31,7 @@ class NationalWeather():
         config.read('../CONFIG/CONFIG.ini')
         url = (config.get('URL', 'forecast'))
         url = str(url).replace('latitude', str(lat)).replace('longitude', str(lng))
-        print url
+        print(url)
         return url
 
     """Gets Weather Information and Writes data to file.
@@ -42,14 +42,14 @@ class NationalWeather():
     @param lng
         longitude of weather forecast"""
     def getWeather(self, url, lat, lng):
-        weather_data = HTML(urllib2.urlopen(url).read(), 'lxml')
+        weather_data = HTML(requests.get(url).content, 'lxml')
         location = weather_data.html.body.forecast['location']
         time = weather_data.html.body.creationtime.string
         weather = weather_data.html.body.contents[0].contents[4]
         weather_forecast = Weather_Forecast(lat, lng, location, time)
         weather_forecast.detWeatherProperties(weather)
         weather_forecast.outputWeatherProperties()
-        print url
+        print(url)
 
     """Fetches weather data
     @updates contents in file"""
@@ -64,11 +64,11 @@ class NationalWeather():
             except Exception:
                 import sys
                 error_type, error, traceback = sys.exc_info()
-                print error
+                print(error)
                 pass
             current += 1
-            print str(current) + ' of ' + str(total)
-            print '!' * 20
+            print(str(current) + ' of ' + str(total))
+            print('!' * 20)
 
 if __name__ == '__main__':
     weather = NationalWeather()
