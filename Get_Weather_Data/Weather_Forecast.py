@@ -10,7 +10,7 @@ class Weather_Forecast():
         self.location = location
         self.LAT = lat
         self.LNG = lng
-        self.day = 'Sunday'
+        self.day = 'Monday'
         self.time = time
 
     """Determines Weather Properties from XML table.
@@ -44,4 +44,5 @@ class Weather_Forecast():
         out.write(', Forecast' + self.forecast)
         out.write(', Chance of Precipitation: ' + str(self.precipitation_chance))
         out.write(', Location: ' + self.location + '\n')
+        print 'printed'
 

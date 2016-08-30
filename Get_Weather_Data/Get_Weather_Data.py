@@ -61,7 +61,11 @@ class NationalWeather():
             url = self.getURL(lat,lng)
             try:
                 self.getWeather(url, lat, lng)
-            except: pass
+            except Exception:
+                import sys
+                error_type, error, traceback = sys.exc_info()
+                print error
+                pass
             current += 1
             print str(current) + ' of ' + str(total)
             print '!' * 20
