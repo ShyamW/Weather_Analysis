@@ -30,7 +30,7 @@ class State_Choropleth():
                         weather = weather.strip('\n').split(',')
                         temperature = int(weather[5].replace('Temperature: ', '').replace(' ', ''))
                         state = weather[8].split(' ')[-1]
-                        print state
+                        print(state)
                         if state in self.state_to_temp.keys():
                             self.state_to_temp[state].add(temperature)
                         else:
@@ -80,7 +80,7 @@ class State_Choropleth():
     def showPlot(self):
         fig = dict(data=self.data, layout=self.layout)
         url = py.plot(fig, filename='US Temperatures')
-        print url
+        print(url)
 
     """Performs all tasks needed to produce a choropleth."""
     def plotFigure(self):
