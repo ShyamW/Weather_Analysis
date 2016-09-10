@@ -31,5 +31,7 @@ To analyze and plot parsed weather data, ensure the following requirements are m
 1. Python 2.7 or Later
     * Programming Language
 2. Plotly 
-    * Library used to form a state temperature choropleth 
+    * Library used to form a state temperature choropleth
+2. ConfigParser
+    * Module used to read from config file
 
