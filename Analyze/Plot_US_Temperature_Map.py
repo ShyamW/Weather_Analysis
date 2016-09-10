@@ -36,7 +36,6 @@ class State_Choropleth():
                         weather = weather.strip('\n').split(',')
                         temperature = int(weather[5].replace('Temperature: ', '').replace(' ', ''))
                         state = weather[8].split(' ')[-1]
-                        print(state)
                         if state in self.state_to_temp.keys():
                             self.state_to_temp[state].add(temperature)
                         else:
@@ -98,6 +97,8 @@ class State_Choropleth():
         self.showPlot()
 
 if __name__ == '__main__':
+    print "Loading..."
     choropleth = State_Choropleth()
     choropleth.plotFigure()
+    print "Done..."
 
