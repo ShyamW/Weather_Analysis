@@ -14,7 +14,7 @@ To parse current weather data, ensure the following requirements are met.
 1. Python 2.7 or Later
     * Programming Language
 2. ConfigParser (configparser if python 3.x)
-    * Library to read parameter data suchas the url to parse
+    * Library to read parameter data such as the url to parse
 3. requests 
     * Used to Parse Weather Data from National Weather Service   
 4. bs4
@@ -32,6 +32,6 @@ To analyze and plot parsed weather data, ensure the following requirements are m
     * Programming Language
 2. Plotly 
     * Library used to form a state temperature choropleth
-2. ConfigParser
-    * Module used to read from config file
+2. ConfigParser (configparser if python 3.x)
+    * Library to read parameter data such as the url to parse
 
