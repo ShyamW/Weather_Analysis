@@ -1,4 +1,5 @@
 import plotly.plotly as py
+import ConfigParser
 
 """This class Takes National Weather Data gathered from Weather.gov and outputs a US state choropleth of average
 state temperatures."""
@@ -19,11 +20,16 @@ class State_Choropleth():
     def signIn(self):
         py.sign_in('gingerbread123', '5wi0st6l25')
 
+    def getOutputPath(self):
+        config = ConfigParser.ConfigParser()
+        config.read('../CONFIG/CONFIG.ini')
+        return config.get('OUTPUT_PATH', 'output_path')
+
     """Forms a dictionary of {state: [temperatures]} by reading weather dat from weather_out.
     @updates self.state_to_temp
         adds temperatures read from file"""
     def formStateWeatherDict(self):
-        with open('../DATA/DATA_OUT/weather_out') as f:
+        with open(self.getOutputPath()) as f:
             for weather in f:
                 try:
                     if '*' not in weather:
@@ -43,7 +49,7 @@ class State_Choropleth():
     def AverageTemps(self):
         for state, temperatures in self.state_to_temp.items():
             avg_temp = sum(temperatures) / float(len(temperatures))
-            self.state_to_temp[state] = avg_temp
+            self.state_to_temp[state] = "{:.2f}".format(avg_temp) # round average to 2 decimal places
 
     """Builds the Configuration JSON for the Choropleth Plot.
     @replaces self.data"""

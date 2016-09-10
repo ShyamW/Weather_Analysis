@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup as HTML
 class NationalWeather(object):
     def __init__(self):
         self.lat_lng = []
+        self.weather_forecasts = []
         print('Fetching')
 
     """Gets all Coordinates to determine weather for
@@ -48,8 +49,45 @@ class NationalWeather(object):
         weather = weather_data.html.body.contents[0].contents[4]
         weather_forecast = Weather_Forecast(lat, lng, location, time)
         weather_forecast.detWeatherProperties(weather)
-        weather_forecast.outputWeatherProperties()
+        self.weather_forecasts.append(weather_forecast)
         print(url)
+
+    """Gets path to Output file
+    @return output_file path (String)"""
+    def getOutputPath(self):
+        config = ConfigParser.ConfigParser()
+        config.read('../CONFIG/CONFIG.ini')
+        return (config.get('OUTPUT_PATH', 'output_path'))
+
+    """Writes weather data for each {@code forecasts} to text file"""
+    def outputData(self):
+        out = open(self.getOutputPath(), 'a')
+        for forecast in self.weather_forecasts:
+            try:
+                out.write('Latitude: ' + forecast.LAT)
+                out.write(', Longitude: ' + forecast.LNG)
+                out.write(', Day: ' + forecast.day)
+                out.write(', Time: ' + forecast.time)
+                out.write(', Temperature: ' + str(forecast.temperature))
+                out.write(', Forecast' + forecast.forecast)
+                out.write(', Chance of Precipitation: ' + str(forecast.precipitation_chance))
+                out.write(', Location: ' + forecast.location + '\n')
+                print('printed')
+            except Exception:
+                pass
+
+    def parseWeatherData(self, lat, lng, current, total):
+            url = self.getURL(lat, lng)
+            try:
+                self.getWeather(url, lat, lng)
+                print "YES"
+            except Exception:
+                import sys
+                error_type, error, traceback = sys.exc_info()
+                print(error)
+                pass
+            print(str(current) + ' of ' + str(total))
+            print('!' * 20)
 
     """Fetches weather data
     @updates contents in file"""
@@ -58,18 +96,11 @@ class NationalWeather(object):
         current = 0
         total = len(self.lat_lng.keys())
         for lat, lng in self.lat_lng.items():
-            url = self.getURL(lat,lng)
-            try:
-                self.getWeather(url, lat, lng)
-            except Exception:
-                import sys
-                error_type, error, traceback = sys.exc_info()
-                print(error)
-                pass
+            self.parseWeatherData(lat, lng, current, total)
             current += 1
-            print(str(current) + ' of ' + str(total))
-            print('!' * 20)
+
 
 if __name__ == '__main__':
     weather = NationalWeather()
     weather.fetch()
+    weather.outputData()

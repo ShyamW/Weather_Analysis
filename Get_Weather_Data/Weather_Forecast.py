@@ -30,18 +30,3 @@ class Weather_Forecast(object):
             self.precipitation_chance = weather_table.pop.string
         except Exception:
             print('Exception')
-
-    """Writes Weather Properties to text file
-    @param self
-        Weather Forecast Object"""
-    def outputWeatherProperties(self):
-        out = open('../DATA/DATA_OUT/weather_out', 'a')
-        out.write('Latitude: ' + self.LAT)
-        out.write(', Longitude: ' + self.LNG)
-        out.write(', Day: ' + self.day)
-        out.write(', Time: ' + self.time)
-        out.write(', Temperature: ' + str(self.temperature))
-        out.write(', Forecast' + self.forecast)
-        out.write(', Chance of Precipitation: ' + str(self.precipitation_chance))
-        out.write(', Location: ' + self.location + '\n')
-        print('printed')
