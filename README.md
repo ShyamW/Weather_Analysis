@@ -1,7 +1,7 @@
 # Weather Analysis Documentation
 This repository serves two functions:
   1. Gather Temperature data for US cities
-  2. Plot Average Temperatures of each US state on a US Choropleth Diagram
+  2. Plot Average Temperatures of each US state on a Choropleth Diagram
 
 ## 1. Gather Temperature Data for US cities
 This module (located under Get_Weather_Data) requests weather data from the national weather service for each US city. Weather data (such as temperature, forecasts, and change of precipitation) and location data (such as location coordinates, and states) are recorded in a data txt file.
