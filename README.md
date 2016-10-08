@@ -21,27 +21,34 @@ To analyze and plot parsed weather data, ensure the requirements below are met.
 
 ## Basic Requirements
 1. [Python 2.X](https://www.python.org/downloads/)
-	* Python 2.7 recommended
+   * Python 2.7 recommended
 
-			sudo apt-get install python
+	sudo apt-get install python
       
 2. [ConfigParser](https://pypi.python.org/pypi/configparser)
-	* Used to Read API Key information
-        	pip install ConfigParser
+   * Used to Read API Key information
+   
+	pip install ConfigParser
     
 ## Parsing Requirements
 4. [requests](http://docs.python-requests.org/en/master/)
    * Used to Parse Weather Data from National Weather Service
+   
           pip install requests
+	  
 5. [bs4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup)
    * Used to Parse forecast data in XML format
+   
           pip install bs4
+	  
 6. [lxml](http://lxml.de/index.html#download)
    * XML parser used by bs4
+   
           pip install lxml
     
 ## Plotting Requirements
 1. [plotly](https://plot.ly/python/getting-started/)
    * Library used to form a state temperature choropleth
+   
           pip install plotly
 
