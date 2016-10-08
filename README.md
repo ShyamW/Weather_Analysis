@@ -16,10 +16,10 @@ This module analyzes parsed weather data by creating a dictionary of states to r
 To analyze and plot parsed weather data, ensure the requirements below are met.
 
 
-## Screenshots
+**Screenshots**
 ![alt tag](https://raw.githubusercontent.com/shyamw/Weather_Analysis/master/Documentation/Capture.PNG)
 
-##### Parsing and Plotting Requirements
+## Parsing and Plotting Requirements
 1. Python 2.7 or Later 
     * Programming Language
 2. ConfigParser (configparser if python 3.x)
