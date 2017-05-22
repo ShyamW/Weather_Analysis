@@ -2,6 +2,9 @@
 This repository serves two functions:
   1. Gather Temperature data for US cities
   2. Plot Average Temperatures of each US state on a Choropleth Diagram
+  
+**Screen Cap**
+![alt tag](https://raw.githubusercontent.com/shyamw/Weather_Analysis/master/Documentation/Capture.PNG)
 
 ## 1. Gather Temperature Data for US cities
 This module (located under Get_Weather_Data) requests weather data from the national weather service for each US city. Weather data (such as temperature, forecasts, and change of precipitation) and location data (such as location coordinates, and states) are recorded in a data txt file.
@@ -15,9 +18,6 @@ This module analyzes parsed weather data by creating a dictionary of states to r
 
 To analyze and plot parsed weather data, ensure the requirements below are met.
 
-
-**Screenshots**
-![alt tag](https://raw.githubusercontent.com/shyamw/Weather_Analysis/master/Documentation/Capture.PNG)
 
 ## Basic Requirements
 1. [Python 2.X](https://www.python.org/downloads/)
